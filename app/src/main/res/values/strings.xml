@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">BarcodeScanner</string>
+    <string name="missing_camera_permission_message">To be able to read barcodes you need to grant the camera permission</string>
+    <string name="grant_permission_button">Grant permission</string>
 </resources>
