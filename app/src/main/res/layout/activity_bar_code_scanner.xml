@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center">
@@ -27,4 +28,47 @@
             android:text="@string/grant_permission_button" />
     </LinearLayout>
 
+    <FrameLayout
+        android:id="@+id/frameLayout_barcodeScannerActivity_cameraContainer"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="match_parent">
+
+        <com.camerakit.CameraKitView
+            android:id="@+id/cameraKitView_barcodeScannerActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:keepScreenOn="true"
+            app:camera_facing="back"
+            app:camera_flash="off"
+            app:camera_focus="continuous"
+            app:camera_permissions="camera" />
+
+        <Button
+            android:id="@+id/button_barcodeScannerActivity_capture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:text="@string/capture" />
+
+        <TextView
+            android:id="@+id/textView_barcodeScannerActivity_barcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center_horizontal"
+            android:background="@android:color/white"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <ProgressBar
+            android:id="@+id/progressBar_barcodeScannerActivity_loading"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:layout_height="wrap_content"/>
+
+    </FrameLayout>
 </FrameLayout>
